@@ -14,8 +14,8 @@ VM (Any Cloud Provider - AWS), Git Setup on VM, Nodejs Installed on VM, Linux Ba
 Git is available in the default Amazon Linux package repositories. so, we need to setup only if its not available with VM Image(Optional).
 
 ```bash
-  sudo yum update -y 
-  sudo yum install git -y 
+  sudo apt update -y 
+  sudo apt install git -y 
   git --version 
 ```
     
@@ -30,6 +30,31 @@ we need node package manager to install required dependencies to run Nodejs base
 
 ```
 
+
+## Setup of Angular CLI and Running Project
+
+This Application needs Angular CLI Version 18.
+```bash
+  npm install -g @angular/cli
+  git clone https://github.com/ajazbeig-21/aws-app-deployment.git
+  cd aws-app-deployment
+  npm install
+  ng serve --host 0.0.0.0 --port 4200
+
+```
+
+
+## Modify Security Group from AWS
+
+Edit Inbound rule in a Security group Settings of Deployed EC2 Instance
+
+Type : Custom TCP
+Protocol : TCP
+Port : 4200
+Source : 0.0.0.0/0
+
+http://<public-ipv4-address>:4200/
+#### 👏 Now, Our Portfolio Application is Visible 
 
 ## Authors
 
