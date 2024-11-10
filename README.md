@@ -19,6 +19,18 @@ Git is available in the default Amazon Linux package repositories. so, we need t
   git --version 
 ```
     
+## Setup of Nodejs
+
+we need node package manager to install required dependencies to run Nodejs based Application.
+```bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  source ~/.bashrc
+  nvm install --lts
+  node -v
+
+```
+
+
 ## Authors
 
 - [@ajazbeig](https://github.com/ajazbeig-21)
