@@ -33,7 +33,6 @@ yarn-error.log*
 
 # Angular CLI specific
 .angular/cache/
-/angular.json
 
 # Coverage directory (for unit test reports)
 /coverage/
