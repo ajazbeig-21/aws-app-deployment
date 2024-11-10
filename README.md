@@ -9,6 +9,16 @@ I'm Frontend Developer & DevOps/SRE Enthusiast | Crafting seamless UIs & robust 
 ## 🛠 Prerequisites
 VM (Any Cloud Provider - AWS), Git Setup on VM, Nodejs Installed on VM, Linux Basics
 
+## Setup Git on VM
+#### We are Going to Use Amazon Linux Machine for deployment.
+Git is available in the default Amazon Linux package repositories. so, we need to setup only if its not available with VM Image(Optional).
+
+```bash
+  sudo yum update -y 
+  sudo yum install git -y 
+  git --version 
+```
+    
 ## Authors
 
 - [@ajazbeig](https://github.com/ajazbeig-21)
