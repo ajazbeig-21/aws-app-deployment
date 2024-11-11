@@ -60,9 +60,9 @@ This Application needs Angular CLI Version 18.
 
 Edit Inbound rule in a Security group Settings of Deployed EC2 Instance
 
-Type : Custom TCP
-Protocol : TCP
-Port : 4200
+Type : Custom TCP,
+Protocol : TCP,
+Port : 4200,
 Source : 0.0.0.0/0
 
 http://public-ipv4-address:4200/
