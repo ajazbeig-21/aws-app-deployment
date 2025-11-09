@@ -214,8 +214,8 @@ import { SEOService } from '../services/seo.service';
               If you have any questions about these Terms and Conditions, please contact us at:
             </p>
             <div class="bg-gray-50 p-4 rounded-lg">
-              <p class="text-gray-700"><strong>Email:</strong> hello&#64;ajazbeig.com</p>
-              <p class="text-gray-700"><strong>Website:</strong> www.ajazbeig.com</p>
+              <p class="text-gray-700"><strong>Email:</strong> ajazbeig200&#64;gmail.com</p>
+              <p class="text-gray-700"><strong>Website:</strong> www.ajazbeig.in</p>
               <p class="text-gray-700"><strong>Response Time:</strong> Within 48 hours</p>
             </div>
           </section>

@@ -99,11 +99,11 @@ import { SEOService } from '../services/seo.service';
                   formControlName="budget"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
                   <option value="">Select budget range</option>
-                  <option value="under-5k">Under $5,000</option>
-                  <option value="5k-10k">$5,000 - $10,000</option>
-                  <option value="10k-25k">$10,000 - $25,000</option>
-                  <option value="25k-50k">$25,000 - $50,000</option>
-                  <option value="50k-plus">$50,000+</option>
+                  <option value="under-5k">Under 5,000 INR</option>
+                  <option value="5k-10k">5,000 - 10,000 INR</option>
+                  <option value="10k-25k">10,000 - 25,000 INR</option>
+                  <option value="25k-50k">25,000 - 50,000 INR</option>
+                  <option value="50k-plus">50,000+ INR</option>
                 </select>
               </div>
 
@@ -166,7 +166,7 @@ import { SEOService } from '../services/seo.service';
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900">Email</h4>
-                    <p class="text-gray-600">hello&#64;ajazbeig.com</p>
+                    <p class="text-gray-600">ajazbeig200&#64;gmail.com</p>
                     <p class="text-sm text-gray-500">I'll respond within 24 hours</p>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ import { SEOService } from '../services/seo.service';
                   </div>
                 </a>
 
-                <a href="https://m.youtube.com/@ProgrammingWithAjaz" target="_blank" rel="noopener noreferrer"
+                <a href="https://m.youtube.com/@TechWithAjaz" target="_blank" rel="noopener noreferrer"
                    class="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-200">
                   <img src="assets/images/socials/youtube.png" alt="YouTube" class="h-8 w-8">
                   <div>

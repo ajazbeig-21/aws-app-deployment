@@ -34,9 +34,14 @@ import { SEOService } from '../services/seo.service';
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a routerLink="/portfolio" 
+              <!-- TODO: PORTFOLIO - Uncomment when ready to add portfolio section -->
+              <!-- <a routerLink="/portfolio" 
                  class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 View My Work
+              </a> -->
+              <a routerLink="/products" 
+                 class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                View Products
               </a>
               <a routerLink="/contact" 
                  class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200">
@@ -62,7 +67,7 @@ import { SEOService } from '../services/seo.service';
                 <span class="text-sm font-medium">GitHub</span>
               </a>
               
-              <a href="https://m.youtube.com/@ProgrammingWithAjaz" target="_blank" rel="noopener noreferrer"
+              <a href="https://m.youtube.com/@TechWithAjaz" target="_blank" rel="noopener noreferrer"
                  class="flex flex-col items-center gap-2 text-gray-600 hover:text-red-600 transition-colors duration-200 group">
                 <div class="p-2 bg-white rounded-lg shadow-md group-hover:shadow-lg transition-shadow">
                   <img src="assets/images/socials/youtube.png" alt="YouTube" class="h-8 w-8">

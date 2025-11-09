@@ -29,17 +29,26 @@ interface Product {
     <section class="bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-24 pb-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-          Digital <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Products</span>
+          Digital <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">eBooks</span>
         </h1>
-        <p class="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
-          Premium resources to accelerate your development journey and career growth
+        <p class="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto mb-4">
+          Premium interview preparation guides delivered directly to your email
         </p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto mb-8">
+          <div class="flex items-center justify-center gap-2 text-blue-700">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+            <span class="font-medium">📧 Delivered to your email within 1 hour of purchase</span>
+          </div>
+        </div>
         <div class="flex justify-center items-center gap-8 text-sm text-gray-600">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
             </svg>
-            <span>Instant Download</span>
+            <span>Email Delivery</span>
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
@@ -47,70 +56,35 @@ interface Product {
             </svg>
             <span>Lifetime Updates</span>
           </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>Money-back Guarantee</span>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Filter/Category Section -->
-    <section class="bg-white border-b border-gray-200 sticky top-16 z-40">
+    <!-- TODO: FILTERS - Add category filters when more products are available -->
+    <!-- <section class="bg-white border-b border-gray-200 sticky top-16 z-40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap justify-center gap-4 py-4">
-          <button 
-            (click)="setActiveFilter('all')"
-            [class]="activeFilter === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
-            class="px-6 py-2 rounded-full font-medium transition-colors duration-200">
-            All Products ({{ products.length }})
-          </button>
-          <button 
-            (click)="setActiveFilter('eBooks')"
-            [class]="activeFilter === 'eBooks' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
-            class="px-6 py-2 rounded-full font-medium transition-colors duration-200">
-            eBooks & Guides
-          </button>
-          <button 
-            (click)="setActiveFilter('Templates')"
-            [class]="activeFilter === 'Templates' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
-            class="px-6 py-2 rounded-full font-medium transition-colors duration-200">
-            Code Templates
-          </button>
-          <button 
-            (click)="setActiveFilter('Courses')"
-            [class]="activeFilter === 'Courses' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
-            class="px-6 py-2 rounded-full font-medium transition-colors duration-200">
-            Video Courses
-          </button>
-          <button 
-            (click)="setActiveFilter('Tools')"
-            [class]="activeFilter === 'Tools' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
-            class="px-6 py-2 rounded-full font-medium transition-colors duration-200">
-            Tools & Scripts
-          </button>
+          Filter buttons here...
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Products Grid -->
     <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Featured Products -->
-        <div class="mb-16" *ngIf="featuredProducts.length > 0">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Featured Products</h2>
+        <!-- Available Products -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Available Products</h2>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <div *ngFor="let product of featuredProducts" 
-                 class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-yellow-200">
+            <div *ngFor="let product of availableProducts" 
+                 class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-green-200">
               
               <!-- Product Image -->
               <div class="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 relative">
                 <div class="absolute top-4 left-4">
-                  <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    ⭐ Featured
+                  <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    ✅ Available
                   </span>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center">
@@ -165,9 +139,13 @@ interface Product {
                 </div>
 
                 <div class="flex gap-3">
-                  <button (click)="viewProduct(product.id)" 
-                          class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                  <!-- <button (click)="viewProduct(product.id)" 
+                           class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
                     View Details
+                  </button> -->
+                  <button 
+                          class="flex-1 bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                    Comming Soon...
                   </button>
                   <button class="px-6 py-3 border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 rounded-lg font-semibold transition-colors duration-200">
                     Preview
@@ -178,18 +156,24 @@ interface Product {
           </div>
         </div>
 
-        <!-- All Products -->
+        <!-- Coming Soon Products -->
         <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">All Products</h2>
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Coming Soon</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div *ngFor="let product of filteredProducts" 
-                 class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div *ngFor="let product of comingSoonProducts" 
+                 class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 opacity-75 relative">
               
               <!-- Product Image -->
               <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 relative">
-                <div *ngIf="product.isPopular" class="absolute top-4 left-4">
-                  <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                    Popular
+                <!-- Coming Soon Overlay -->
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <span class="bg-orange-500 text-white px-4 py-2 rounded-lg text-lg font-bold">
+                    Coming Soon
+                  </span>
+                </div>
+                <div class="absolute top-4 left-4">
+                  <span class="bg-gray-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    Upcoming
                   </span>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center">
@@ -244,16 +228,16 @@ interface Product {
                 </div>
 
                 <div class="space-y-2">
-                  <button (click)="viewProduct(product.id)" 
-                          class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200">
-                    View Details
+                  <button disabled
+                          class="w-full bg-gray-400 text-white px-4 py-2 rounded-lg text-sm font-semibold cursor-not-allowed">
+                    Coming Soon
                   </button>
                   <div class="flex gap-2">
-                    <button class="flex-1 border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 px-3 py-1 rounded text-xs font-medium transition-colors duration-200">
+                    <button disabled class="flex-1 border border-gray-300 text-gray-400 px-3 py-1 rounded text-xs font-medium cursor-not-allowed">
                       Preview
                     </button>
-                    <button class="flex-1 border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 px-3 py-1 rounded text-xs font-medium transition-colors duration-200">
-                      Add to Cart
+                    <button disabled class="flex-1 border border-gray-300 text-gray-400 px-3 py-1 rounded text-xs font-medium cursor-not-allowed">
+                      Notify Me
                     </button>
                   </div>
                 </div>
@@ -262,15 +246,15 @@ interface Product {
           </div>
         </div>
 
-        <!-- Empty State -->
-        <div *ngIf="filteredProducts.length === 0" class="text-center py-12">
+        <!-- Empty State for Available Products -->
+        <div *ngIf="availableProducts.length === 0" class="text-center py-12">
           <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2 2v-5m16 0h-2.586a1 1 0 00-.707.293L12 18.414l-2.707-2.707A1 1 0 008.586 15H6"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">No products found</h3>
-          <p class="text-gray-600">Try adjusting your filter or check back later for new products.</p>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">No products available yet</h3>
+          <p class="text-gray-600">Check back soon for new digital products and resources.</p>
         </div>
       </div>
     </section>
@@ -305,126 +289,41 @@ interface Product {
   `]
 })
 export class ProductsListComponent implements OnInit {
-  activeFilter = 'all';
+  searchQuery: string = '';
 
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Complete DevOps Interview Guide',
-      price: 49900,
-      originalPrice: 69900,
-      description: 'Comprehensive interview preparation guide with 200+ questions, practical scenarios, and expert answers for DevOps positions.',
-      category: 'eBooks',
-      features: [
-        '200+ Interview Questions & Answers',
-        'Real-world Scenarios & Solutions',
-        'Salary Negotiation Tips',
-        'Career Roadmap Included',
-        'Lifetime Updates',
-        'Email Support'
-      ],
-      downloadCount: 2847,
-      rating: 4.8,
-      image: '/assets/images/products/devops-guide.jpg',
-      isPopular: true,
-      difficulty: 'Intermediate',
-      format: 'PDF + Bonus Materials',
-      lastUpdated: 'November 2025'
-    },
+  // Available Products (Currently only 2)
+  availableProducts: Product[] = [
     {
       id: 2,
-      name: 'Angular Full-Stack Template',
-      price: 79900,
-      originalPrice: 99900,
-      description: 'Production-ready Angular template with Node.js backend, authentication, payment integration, and deployment scripts.',
-      category: 'Templates',
-      features: [
-        'Angular 17+ Frontend',
-        'Node.js + Express Backend',
-        'JWT Authentication',
-        'Payment Integration',
-        'Docker Configuration',
-        'CI/CD Pipeline Setup'
-      ],
-      downloadCount: 1543,
-      rating: 4.9,
-      image: '/assets/images/products/angular-template.jpg',
-      isPopular: true,
-      difficulty: 'Advanced',
-      format: 'Source Code + Documentation',
-      lastUpdated: 'October 2025'
-    },
-    {
-      id: 3,
-      name: 'Kubernetes Mastery Course',
-      price: 129900,
-      originalPrice: 179900,
-      description: 'Complete video course covering Kubernetes from basics to advanced concepts with hands-on projects and real-world examples.',
-      category: 'Courses',
-      features: [
-        '15+ Hours of Video Content',
-        'Hands-on Labs & Projects',
-        'Real-world Case Studies',
-        'Certificate of Completion',
-        'Private Discord Community',
-        '1-on-1 Mentorship Session'
-      ],
-      downloadCount: 892,
-      rating: 4.9,
-      image: '/assets/images/products/kubernetes-course.jpg',
-      isPopular: false,
-      difficulty: 'Intermediate to Advanced',
-      format: 'Video + Resources',
-      lastUpdated: 'September 2025'
-    },
-    {
-      id: 4,
-      name: 'AWS Infrastructure Scripts Pack',
+      name: 'Terraform Interview Preparation Guide',
       price: 39900,
       originalPrice: 59900,
-      description: 'Collection of Terraform and CloudFormation templates for common AWS infrastructure patterns and best practices.',
-      category: 'Tools',
+      description: 'Master Terraform interviews with comprehensive questions, hands-on scenarios, and real-world infrastructure automation examples.',
+      category: 'eBooks',
       features: [
-        '50+ Terraform Modules',
-        'CloudFormation Templates',
-        'Cost Optimization Scripts',
-        'Security Best Practices',
-        'Documentation & Examples',
-        'Regular Updates'
+        '30+ Terraform Interview Questions',
+        'Infrastructure as Code Best Practices',
+        'State Management Deep Dive',
+        'Multi-Cloud Deployment Scenarios',
+        'Terraform Modules & Providers',
+        'Hands-on Lab Exercises',
+        'Real-world Case Studies'
       ],
-      downloadCount: 3241,
+      downloadCount: 29,
       rating: 4.7,
-      image: '/assets/images/products/aws-scripts.jpg',
-      isPopular: true,
-      difficulty: 'Intermediate',
-      format: 'Scripts + Documentation',
-      lastUpdated: 'November 2025'
-    },
-    {
-      id: 5,
-      name: 'React Native Starter Kit',
-      price: 69900,
-      description: 'Cross-platform mobile app template with navigation, state management, API integration, and deployment configurations.',
-      category: 'Templates',
-      features: [
-        'React Native + Expo Setup',
-        'Redux Toolkit Integration',
-        'Firebase Authentication',
-        'Push Notifications',
-        'App Store Deployment Guide',
-        'Dark/Light Theme Support'
-      ],
-      downloadCount: 1287,
-      rating: 4.6,
-      image: '/assets/images/products/react-native.jpg',
+      image: '/assets/images/products/terraform-guide.jpg',
       isPopular: false,
-      difficulty: 'Intermediate',
-      format: 'Source Code + Guide',
-      lastUpdated: 'August 2025'
-    },
+      difficulty: 'Intermediate to Advanced',
+      format: 'PDF + Code Examples',
+      lastUpdated: 'November 2025'
+    }
+  ];
+
+  // Coming Soon Products
+  comingSoonProducts: Product[] = [
     {
       id: 6,
-      name: 'System Design Interview Prep',
+      name: 'System Design Interview Prep For DevOps Engineers',
       price: 59900,
       originalPrice: 79900,
       description: 'Master system design interviews with detailed case studies, architectural patterns, and scalability concepts.',
@@ -437,13 +336,13 @@ export class ProductsListComponent implements OnInit {
         'Microservices Architecture',
         'Interview Tips & Tricks'
       ],
-      downloadCount: 2156,
-      rating: 4.8,
+      downloadCount: 0,
+      rating: 0,
       image: '/assets/images/products/system-design.jpg',
-      isPopular: true,
+      isPopular: false,
       difficulty: 'Advanced',
       format: 'PDF + Diagrams',
-      lastUpdated: 'October 2025'
+      lastUpdated: 'Coming Soon'
     }
   ];
 
@@ -456,21 +355,19 @@ export class ProductsListComponent implements OnInit {
     this.seoService.updateSEOData(this.seoService.getProductsSEO());
   }
 
-  get filteredProducts(): Product[] {
-    if (this.activeFilter === 'all') {
-      return this.products.filter(p => !p.isPopular);
-    }
-    return this.products.filter(p => 
-      p.category.toLowerCase().includes(this.activeFilter.toLowerCase()) && !p.isPopular
+  // Search functionality for available products
+  get searchResults(): Product[] {
+    if (!this.searchQuery) return this.availableProducts;
+    
+    return this.availableProducts.filter((p: Product) =>
+      p.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+      p.description.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }
 
-  get featuredProducts(): Product[] {
-    return this.products.filter(p => p.isPopular);
-  }
-
-  setActiveFilter(filter: string): void {
-    this.activeFilter = filter;
+  // Method to update search query
+  updateSearchQuery(query: string): void {
+    this.searchQuery = query;
   }
 
   viewProduct(id: number): void {

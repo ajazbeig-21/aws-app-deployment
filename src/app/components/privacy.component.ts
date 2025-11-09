@@ -262,8 +262,8 @@ import { SEOService } from '../services/seo.service';
             <div class="bg-gray-50 p-6 rounded-lg">
               <h4 class="font-semibold text-gray-900 mb-3">Data Protection Officer</h4>
               <p class="text-gray-700 mb-2"><strong>Email:</strong> privacy&#64;ajazbeig.com</p>
-              <p class="text-gray-700 mb-2"><strong>General Contact:</strong> hello&#64;ajazbeig.com</p>
-              <p class="text-gray-700 mb-2"><strong>Website:</strong> www.ajazbeig.com/contact</p>
+              <p class="text-gray-700 mb-2"><strong>General Contact:</strong> ajazbeig200&#64;gmail.com</p>
+              <p class="text-gray-700 mb-2"><strong>Website:</strong> www.ajazbeig.in/contact</p>
               <p class="text-gray-700 mb-2"><strong>Response Time:</strong> Within 48 hours</p>
               <p class="text-gray-700 text-sm mt-3">
                 <em>We are committed to resolving privacy concerns promptly and transparently.</em>
