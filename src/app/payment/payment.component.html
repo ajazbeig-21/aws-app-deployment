@@ -1,0 +1,12 @@
+<div class="payment-container">
+  <h2>Buy {{ product.name }}</h2>
+  <p>Price: ₹{{ product.price / 100 }}</p>
+
+  <form (ngSubmit)="pay()" #paymentForm="ngForm">
+    <input type="text" placeholder="Your Name" [(ngModel)]="customer.name" name="name" required />
+    <input type="email" placeholder="Email Address" [(ngModel)]="customer.email" name="email" required />
+    <input type="text" placeholder="Phone Number" [(ngModel)]="customer.phone" name="phone" required />
+    
+    <button type="submit" [disabled]="!paymentForm.valid">Proceed to Pay</button>
+  </form>
+</div>
