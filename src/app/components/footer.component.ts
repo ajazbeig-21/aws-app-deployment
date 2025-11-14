@@ -19,8 +19,8 @@ import { FormsModule } from '@angular/forms';
               </span>
             </div>
             <p class="text-gray-300 mb-6 max-w-md">
-              Frontend Developer & DevOps/SRE Enthusiast crafting seamless user interfaces and robust infrastructures. 
-              Specializing in modern web technologies and cloud solutions.
+              Software Engineer specializing in DevOps and SRE, crafting robust infrastructures and scalable solutions.
+              Passionate about cloud technologies and automation.
             </p>
             <!-- Social Links -->
             <div class="flex space-x-4">
@@ -70,6 +70,7 @@ import { FormsModule } from '@angular/forms';
               <li><a routerLink="/terms" class="text-gray-300 hover:text-white transition-colors duration-200">Terms & Conditions</a></li>
               <li><a routerLink="/privacy" class="text-gray-300 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
               <li><a routerLink="/refund" class="text-gray-300 hover:text-white transition-colors duration-200">Refund Policy</a></li>
+              <li><a routerLink="/shipping" class="text-gray-300 hover:text-white transition-colors duration-200">Shipping Policy</a></li>
             </ul>
           </div>
         </div>

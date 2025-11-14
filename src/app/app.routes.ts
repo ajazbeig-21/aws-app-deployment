@@ -8,6 +8,7 @@ import { ContactComponent } from './components/contact.component';
 import { TermsComponent } from './components/terms.component';
 import { PrivacyComponent } from './components/privacy.component';
 import { RefundComponent } from './components/refund.component';
+import { ShippingComponent } from './components/shipping.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },                     // Home page
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: 'terms', component: TermsComponent },              // Terms & Conditions
   { path: 'privacy', component: PrivacyComponent },          // Privacy Policy
   { path: 'refund', component: RefundComponent },            // Refund Policy
+  { path: 'shipping', component: ShippingComponent },        // Shipping Policy
   { path: '**', redirectTo: '' }                             // Redirect unknown routes to home
 ];
