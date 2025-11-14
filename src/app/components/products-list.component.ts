@@ -145,7 +145,7 @@ interface Product {
                   </button> -->
                   <button 
                           class="flex-1 bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
-                    Comming Soon...
+                    Coming Soon...
                   </button>
                   <button class="px-6 py-3 border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 rounded-lg font-semibold transition-colors duration-200">
                     Preview

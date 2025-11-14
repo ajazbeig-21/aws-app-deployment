@@ -67,9 +67,9 @@ export class SEOService {
   // Predefined SEO data for different pages
   getHomeSEO(): SEOData {
     return {
-      title: 'Ajaz Beig - Frontend Developer & DevOps Engineer | Portfolio & Digital Products',
-      description: 'Expert Frontend Developer & DevOps Engineer specializing in Angular, React, AWS, Kubernetes, CI/CD. Browse premium digital products, courses, and development services.',
-      keywords: 'frontend developer, devops engineer, angular, react, aws, kubernetes, docker, ci/cd, portfolio, digital products',
+      title: 'Ajaz Beig - Software Engineer | DevOps & SRE Specialist | Digital Products',
+      description: 'Expert Software Engineer specializing in DevOps and SRE. Building scalable infrastructures with AWS, Kubernetes, CI/CD. Premium digital products and consulting services.',
+      keywords: 'software engineer, devops, sre, aws, kubernetes, docker, ci/cd, infrastructure, automation, digital products',
       url: 'https://ajazbeig.com',
       type: 'website',
       image: 'https://ajazbeig.com/assets/images/og-home.jpg',
@@ -79,9 +79,9 @@ export class SEOService {
 
   getPortfolioSEO(): SEOData {
     return {
-      title: 'Portfolio - Ajaz Beig | Frontend & DevOps Projects',
-      description: 'Explore innovative web development and DevOps projects by Ajaz Beig. Featuring Angular applications, AWS infrastructure, Kubernetes deployments, and CI/CD implementations.',
-      keywords: 'portfolio, web development projects, devops projects, angular applications, aws infrastructure, kubernetes',
+      title: 'Portfolio - Ajaz Beig | DevOps & SRE Projects',
+      description: 'Explore innovative DevOps and SRE projects by Ajaz Beig. Featuring AWS infrastructure, Kubernetes deployments, CI/CD pipelines, and cloud automation solutions.',
+      keywords: 'portfolio, devops projects, sre projects, aws infrastructure, kubernetes, ci/cd, cloud automation',
       url: 'https://ajazbeig.com/portfolio',
       type: 'website',
       image: 'https://ajazbeig.com/assets/images/og-portfolio.jpg',
@@ -103,9 +103,9 @@ export class SEOService {
 
   getContactSEO(): SEOData {
     return {
-      title: 'Contact Ajaz Beig - Hire Frontend Developer & DevOps Engineer',
-      description: 'Get in touch with Ajaz Beig for your next project. Available for frontend development, DevOps consulting, and custom software solutions. Free consultation available.',
-      keywords: 'hire frontend developer, hire devops engineer, consultation, custom development, freelance developer',
+      title: 'Contact Ajaz Beig - Hire Software Engineer | DevOps & SRE Consulting',
+      description: 'Get in touch with Ajaz Beig for DevOps and SRE consulting. Available for infrastructure automation, cloud solutions, and system reliability engineering. Free consultation available.',
+      keywords: 'hire software engineer, hire devops consultant, sre consulting, infrastructure automation, cloud solutions',
       url: 'https://ajazbeig.com/contact',
       type: 'website',
       image: 'https://ajazbeig.com/assets/images/og-contact.jpg',
