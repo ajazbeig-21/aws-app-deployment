@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -7,113 +7,77 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50 border-b border-gray-200">
+    <nav class="fixed w-full top-0 z-50 transition-all duration-300"
+         [ngStyle]="scrolled ? {'background': 'rgba(13,13,20,0.95)', 'backdrop-filter': 'blur(16px)', 'border-bottom': '1px solid rgba(137,119,254,0.2)'} : {'background': 'transparent'}">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-          <!-- Logo -->
-          <div class="flex-shrink-0 flex items-center">
-            <a routerLink="/" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
-              <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Ajaz Beig
-              </span>
+          <a routerLink="/" class="flex items-center gap-2">
+            <span class="terminal-text text-lg font-bold" style="color:#fd974d">~/</span>
+            <span class="font-bold text-xl text-white">ajaz_beig</span>
+          </a>
+          <div class="hidden md:flex items-center gap-8">
+            <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"
+               class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors duration-200">Home</a>
+            <a routerLink="/portfolio" routerLinkActive="active-link"
+               class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors duration-200">Projects</a>
+            <a routerLink="/contact" routerLinkActive="active-link"
+               class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+          </div>
+          <div class="hidden md:block">
+            <a href="https://topmate.io/techworld_with_ajaz" target="_blank" rel="noopener noreferrer"
+               class="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:scale-105 inline-block"
+               style="background: linear-gradient(135deg, #fd974d, #8977fe); box-shadow: 0 0 20px rgba(137,119,254,0.3)">
+              Book a Call
             </a>
           </div>
-
-          <!-- Desktop Menu -->
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-8">
-              <a routerLink="/" routerLinkActive="text-blue-600 border-b-2 border-blue-600" 
-                 [routerLinkActiveOptions]="{exact: true}"
-                 class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-                Home
-              </a>
-              <!-- TODO: PORTFOLIO - Uncomment when ready to add portfolio section -->
-              <!-- <a routerLink="/portfolio" routerLinkActive="text-blue-600 border-b-2 border-blue-600"
-                 class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-                Portfolio
-              </a> -->
-              <a routerLink="/products" routerLinkActive="text-blue-600 border-b-2 border-blue-600"
-                 class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-                Products
-              </a>
-              <a routerLink="/contact" routerLinkActive="text-blue-600 border-b-2 border-blue-600"
-                 class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-                Contact
-              </a>
-            </div>
-          </div>
-
-          <!-- CTA Button -->
-          <div class="hidden md:block">
-            <a routerLink="/contact" 
-               class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg">
-              Get In Touch
-            </a>
-          </div>
-
-          <!-- Mobile menu button -->
-          <div class="md:hidden">
-            <button (click)="toggleMobileMenu()" 
-                    class="text-gray-700 hover:text-blue-600 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors">
-              <svg class="h-6 w-6" [class.hidden]="isMobileMenuOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <svg class="h-6 w-6" [class.hidden]="!isMobileMenuOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+          <button (click)="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white p-2">
+            <svg class="h-6 w-6" [class.hidden]="isMobileMenuOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg class="h-6 w-6" [class.hidden]="!isMobileMenuOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
         </div>
       </div>
-
-      <!-- Mobile Menu -->
-      <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-          <a routerLink="/" (click)="closeMobileMenu()" 
-             routerLinkActive="bg-blue-50 text-blue-600" 
-             [routerLinkActiveOptions]="{exact: true}"
-             class="text-gray-700 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors">
-            Home
-          </a>
-          <!-- TODO: PORTFOLIO - Uncomment when ready to add portfolio section -->
-          <!-- <a routerLink="/portfolio" (click)="closeMobileMenu()" 
-             routerLinkActive="bg-blue-50 text-blue-600"
-             class="text-gray-700 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors">
-            Portfolio
-          </a> -->
-          <a routerLink="/products" (click)="closeMobileMenu()" 
-             routerLinkActive="bg-blue-50 text-blue-600"
-             class="text-gray-700 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors">
-            Products
-          </a>
-          <a routerLink="/contact" (click)="closeMobileMenu()" 
-             routerLinkActive="bg-blue-50 text-blue-600"
-             class="text-gray-700 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors">
-            Contact
-          </a>
-          <div class="px-3 py-2">
-            <a routerLink="/contact" (click)="closeMobileMenu()"
-               class="bg-blue-600 hover:bg-blue-700 text-white block w-full text-center px-4 py-2 rounded-md text-base font-medium transition-colors duration-200 shadow-md">
-              Get In Touch
-            </a>
-          </div>
+      <div class="md:hidden" [class.hidden]="!isMobileMenuOpen"
+           style="background: rgba(13,13,20,0.98); border-top: 1px solid rgba(137,119,254,0.2)">
+        <div class="px-4 py-4 space-y-2">
+          <a routerLink="/" (click)="closeMobileMenu()" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active-link-mobile"
+             class="block text-slate-300 hover:text-white px-3 py-2 rounded-lg text-base font-medium transition-colors">Home</a>
+          <a routerLink="/portfolio" (click)="closeMobileMenu()" routerLinkActive="active-link-mobile"
+             class="block text-slate-300 hover:text-white px-3 py-2 rounded-lg text-base font-medium transition-colors">Projects</a>
+          <a routerLink="/contact" (click)="closeMobileMenu()" routerLinkActive="active-link-mobile"
+             class="block text-slate-300 hover:text-white px-3 py-2 rounded-lg text-base font-medium transition-colors">Contact</a>
+          <a href="https://topmate.io/techworld_with_ajaz" target="_blank" rel="noopener noreferrer" (click)="closeMobileMenu()"
+             class="block text-center px-4 py-2 rounded-lg text-sm font-semibold text-white"
+             style="background: linear-gradient(135deg, #fd974d, #8977fe)">Book a Call</a>
         </div>
       </div>
     </nav>
   `,
-  styles: []
+  styles: [`
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute;
+      bottom: -4px; left: 0; width: 0; height: 2px;
+      background: linear-gradient(90deg, #fd974d, #8977fe);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .active-link { color: #fd974d !important; }
+    .active-link-mobile { color: #fd974d !important; }
+  `]
 })
 export class HeaderComponent implements OnInit {
   isMobileMenuOpen = false;
+  scrolled = false;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
+  @HostListener('window:scroll')
+  onScroll(): void { this.scrolled = window.scrollY > 20; }
 
-  closeMobileMenu(): void {
-    this.isMobileMenuOpen = false;
-  }
+  toggleMobileMenu(): void { this.isMobileMenuOpen = !this.isMobileMenuOpen; }
+  closeMobileMenu(): void { this.isMobileMenuOpen = false; }
 }

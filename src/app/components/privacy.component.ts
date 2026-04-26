@@ -91,10 +91,6 @@ import { SEOService } from '../services/seo.service';
               We will not sell, distribute or lease your personal information to third parties unless we have your permission or are required by law to do so. We may use your personal information to send you promotional information about third parties which we think you may find interesting if you tell us that you wish this to happen.
             </p>
 
-            <p>
-              If you believe that any information we are holding on you is incorrect or incomplete, please write to <strong>BEIG MANZIL, SR no 140/4k/1, shambhuraje colony 3, Chakrapani Vasahat Rd, Sainath Nagar, Bhosari Pune MAHARASHTRA 411039</strong> . or contact us at <strong>8788441933</strong> or <strong>programmingwithajaz&#64;gmail.com</strong> as soon as possible. We will promptly correct any information found to be incorrect.
-            </p>
-
           </div>
 
           <div class="border-t pt-6 mt-8 text-center text-gray-500">

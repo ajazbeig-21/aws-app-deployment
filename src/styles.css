@@ -1,4 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0d0d14;
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #fd974d, #8977fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-teal-green {
+    background: linear-gradient(135deg, #58b0e0, #6eec96);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-dark-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .bg-dark-card-hover:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(253,151,77,0.3);
+  }
+  .glow-orange {
+    box-shadow: 0 0 30px rgba(253,151,77,0.25);
+  }
+  .glow-purple {
+    box-shadow: 0 0 30px rgba(137,119,254,0.25);
+  }
+  .border-brand {
+    border-image: linear-gradient(135deg, #fd974d, #8977fe) 1;
+  }
+  .terminal-text {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}

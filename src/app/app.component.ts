@@ -11,5 +11,5 @@ import { FooterComponent } from './components/footer.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Ajaz Beig - Software Engineer | DevOps & SRE Specialist';
+  title = 'Ajaz Beig - DevOps & SRE Engineer | Mentor & Entrepreneur';
 }
